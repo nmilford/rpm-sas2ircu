@@ -2,3 +2,13 @@ rpm-sas2ircu
 ============
 
 An RPM spec file for the SAS-2 Integrated RAID Configuration Utility (SAS2IRCU).
+
+To Build:
+
+`sudo yum -y install rpmdevtools && rpmdev-setuptree`
+
+`wget https://raw.github.com/nmilford/rpm-sas2ircu/master/sas2ircu.spec -O ~/rpmbuild/SPECS/sas2ircu.spec`
+
+`wget http://www.lsi.com/downloads/Public/Host%20Bus%20Adapters/Host%20Bus%20Adapters%20Common%20Files/SAS_SATA_6G_P15/SAS2IRCU_P15.zip -O ~/rpmbuild/SOURCES/SAS2IRCU_P15.zip`
+
+`rpmbuild -bb ~/rpmbuild/SPECS/sas2ircu.spec`
