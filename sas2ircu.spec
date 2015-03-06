@@ -6,9 +6,9 @@
 #
 # You'll have to get the binaries from:
 #
-# http://www.lsi.com/downloads/Public/Host%20Bus%20Adapters/Host%20Bus%20Adapters%20Common%20Files/SAS_SATA_6G_P15/SAS2IRCU_P15.zip
+# http://www.lsi.com/downloads/Public/Host%20Bus%20Adapters/Host%20Bus%20Adapters%20Common%20Files/SAS_SATA_6G_P20/SAS2IRCU_P20.zip
 #
-# By clicking through the EULA and placing it in ~/rpmbuild/SOURCES/SAS2IRCU_P15.zip
+# By clicking through the EULA and placing it in ~/rpmbuild/SOURCES/SAS2IRCU_P20.zip
 #
 # rpmbuild -bb ~/rpmbuild/SPECS/sas2ircu.spec
 
@@ -18,8 +18,8 @@ Release:   1%{?dist}
 Summary:   LSI Corporation SAS2 IR Configuration Utility
 License:   Unknown
 Group:     RAID
-URL:       http://www.lsi.com/downloads/Public/Host%20Bus%20Adapters/Host%20Bus%20Adapters%20Common%20Files/SAS_SATA_6G_P15/SAS2IRCU_User_Guide.pdf
-Source0:   http://www.lsi.com/downloads/Public/Host%20Bus%20Adapters/Host%20Bus%20Adapters%20Common%20Files/SAS_SATA_6G_P15/SAS2IRCU_P15.zip
+URL:       http://www.lsi.com/downloads/Public/Host%20Bus%20Adapters/Host%20Bus%20Adapters%20Common%20Files/SAS_SATA_6G_P20/SAS2IRCU_User_Guide.pdf
+Source0:   http://www.lsi.com/downloads/Public/Host%20Bus%20Adapters/Host%20Bus%20Adapters%20Common%20Files/SAS_SATA_6G_P20/SAS2IRCU_P20.zip
 BuildRoot: %(mktemp -ud %{_tmppath}/%{name}-%{version}-%{release}-XXXXXX)
 
 %description
@@ -34,7 +34,7 @@ unzip %{SOURCE0}
 %install
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/%{_sbindir}
-cp %{_builddir}/%{name}-%{version}/SAS2IRCU_P15/sas2ircu_linux_x86_rel/sas2ircu %{buildroot}/%{_sbindir}
+cp %{_builddir}/%{name}-%{version}/SAS2IRCU_P20/sas2ircu_linux_x86_rel/sas2ircu %{buildroot}/%{_sbindir}
 
 %clean
 rm -rf %{buildroot}
@@ -45,6 +45,9 @@ rm -rf %{buildroot}
 %attr(0755,root,root) %{_sbindir}/sas2ircu
 
 %changelog
+* Wed Mar 06 2015 Kilian Cavalotti <kilian@stanford.edu> - 20.0-1
+- Updated to 20.0
+
 * Wed Jan 11 2013 Nathan Milford <nathan@milford.io> - 15.0-1
 - Updated to 15.0
 
